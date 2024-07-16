@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Species Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #add8e6; /* Light blue background color */
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background: #007BFF;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fish Predictor</h1>
+    <h2>Predict Fish Species</h2>
+    <form method="post" action="/predict">
+        <label for="Weight">Weight:</label>
+        <input type="text" id="Weight" name="Weight">
+
+        <label for="Length1">Length1:</label>
+        <input type="text" id="Length1" name="Length1">
+
+        <label for="Length2">Length2:</label>
+        <input type="text" id="Length2" name="Length2">
+
+        <label for="Length3">Length3:</label>
+        <input type="text" id="Length3" name="Length3">
+
+        <label for="Height">Height:</label>
+        <input type="text" id="Height" name="Height">
+
+        <label for="Width">Width:</label>
+        <input type="text" id="Width" name="Width"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
